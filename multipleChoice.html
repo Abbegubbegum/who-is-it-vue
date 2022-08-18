@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>WhoIsIt</title>
+    <script defer src="./js/multipleChoiceApp.js"></script>
+    <link rel="stylesheet" href="./css/multipleChoiceStyle.css">
+</head>
+<body>
+    <h1>WHO IS IT?</h1>
+    <div class="streak">🔥<span class="streak-label"></span></div>
+    <div class="nav">
+        <a href="./index.html">📠</a>
+        <a href="./multipleChoice.html">📷</a>
+    </div>
+    
+    <div class="game-container">
+        <span class="question-label">Click on:</span> 
+        <span class="name-label"></span>
+        <span class="correct">✅  Correct</span>
+        <span class="tries-left">Tries Left: 2</span>
+        <div class="image-container">
+        </div>
+    </div>
+    <div class="result-container disabled">
+        <p>✅ Correct guesses: <span class="results-correct"></span></p>
+        <p>❌ Wrong guesses: <span class="results-wrong"></span></p>
+        <p>🎯 Accuracy: <span class="results-accuracy"></span>%</p>
+        <button type="button" class="reset-button">Reset</button>
+        <button type="button" class="retry-button">Retry</button>
+    </div>
+</body>
+</html>

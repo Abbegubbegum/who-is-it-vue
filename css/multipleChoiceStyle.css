@@ -1,0 +1,104 @@
+body {
+    display: grid;
+    min-height: 100vh;
+    width: 100vw;
+    place-items: center;
+    grid-template-rows: 10vh 1fr;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.game-container{
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr;
+    height: 100%;
+    width: 100%;
+    /* place-items: center; */
+}
+
+.result-container{
+    display: inline;
+    place-items: center;
+}
+
+input {
+    margin: 3rem;
+}
+
+.disabled {
+    display: none;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.streak {
+    position:absolute;
+    right: 5%;
+    top: 10%;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+a {
+    display: block;
+}
+
+.nav {
+    position:absolute;
+    left: 5%;
+    top: 10%;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.question-label, .name-label {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.question-label {
+    margin-top: 10vh;
+}
+
+.name-label {
+    margin-bottom: 20vh;
+}
+
+.correct, .tries-left {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.face-image {
+    margin: 0.4rem
+}
+
+.face-image:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+a:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    visibility: hidden;
+}
