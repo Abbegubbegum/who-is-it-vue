@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
     <title>WhoIsIt</title>
-    <script defer src="./js/indexApp.js"></script>
-    <link rel="stylesheet" href="./css/indexStyle.css">
-</head>
-<body>
-    <h1>WHO IS IT?</h1>
-    <div class="streak">🔥<span class="streak-label"></span></div>
-    <div class="nav">
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- <script defer src="./js/indexApp.js"></script> -->
+    <script src="./js/indexVueApp.js" defer></script>
+    <link rel="stylesheet" href="./css/indexStyle.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>WHO IS IT?</h1>
+      <div class="streak">🔥 {{streak}}</div>
+      <div class="nav">
         <a href="./index.html">📠</a>
         <a href="./multipleChoice.html">📷</a>
+      </div>
+
+      <div class="game-container" v-if="gameIsActive">
+        <img width="300" v-bind:src="currentPersonPath" alt="Picture of face" />
+        <form @submit="submitAnswer">
+          <input
+            id="name"
+            type="text"
+            autocomplete="off"
+            v-model="inputValue"
+          />
+        </form>
+        <span class="correct" :class="{hidden: !showResponse}">
+          {{correctLabel}}
+        </span>
+        <span class="tries-left" :class="{hidden: !showTriesLeft}"
+          >{{triesLeftLabel}}</span
+        >
+      </div>
+      <div class="result-container" v-else>
+        <p>✅ Correct guesses: {{correctGuessesTotal}}</p>
+        <p>❌ Wrong guesses: {{wrongGuessesTotal}}</p>
+        <p>🎯 Accuracy: {{accuracyLabel}}%</p>
+        <button type="button" class="reset-button" @click="resetGame">
+          Reset
+        </button>
+        <button type="button" class="retry-button" @click="retryGame">
+          Retry
+        </button>
+      </div>
     </div>
-    
-    <div class="game-container">
-        <img class="face-image" width="300px"src="" alt="Picture of face">
-        <form><input id="name" type="text" autocomplete="off"></form>
-        <span class="correct">✅ Correct</span>
-        <span class="tries-left">Tries Left: 3</span>
-    </div>
-    <div class="result-container disabled">
-        <p>✅ Correct guesses: <span class="results-correct"></span></p>
-        <p>❌ Wrong guesses: <span class="results-wrong"></span></p>
-        <p>🎯 Accuracy: <span class="results-accuracy"></span>%</p>
-        <button type="button" class="reset-button">Reset</button>
-        <button type="button" class="retry-button">Retry</button>
-    </div>
-</body>
+  </body>
 </html>
