@@ -1,7 +1,5 @@
 # TODO
 
-- Komplettera runda
-- Streak
 - Fixa Json
 
 # Gamemodes
